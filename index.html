@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    H1{
+        color:violet;
+        font-size: 100px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    button{
+        border-radius: 40px;
+         padding: 20px;
+    }
+
+
+    </style>
+</head>
+<body>
+    <h1 id="display">(count) + (count)</h1>
+    <button id="increase">Press up</button>
+    <button id="decrease">Press down</button>
+</body>
+</html>
+<script>
+
+document.querySelector("h1").innerText=localStorage.getItem("local") //.innertText==0......the chganged value will chnage after refresh of page;
+var count = localStorage.getItem("local")    //.....Not 0 because every time we want count where we left
+document.querySelector("#decrease").addEventListener("click",dec);
+      function dec(){
+         count--; 
+         localStorage.setItem("local",count)  //.....initializing count in local storage 
+    document.querySelector("h1").innerText=count;     
+      }
+
+          
+document.querySelector("#increase").addEventListener("click",inc);
+function inc(){
+    count++;
+    localStorage.setItem("local",count);
+    document.querySelector("h1").innerText=count;     
+}
+
+
+
+
+
+
+</script>
